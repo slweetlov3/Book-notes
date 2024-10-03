@@ -1,0 +1,43 @@
+<%- include("partials/header.ejs") %>
+<body>
+  <div class="container">
+    <form action="/add" method="post">
+      <h1><label for="">Add a new book</label></h1>
+      <input type="text" name="title">
+      <input type="text" name="des">
+      <input type="text" name="isbn">
+      <input type="number" value="Rating" name="rate">
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+    <div class="container">
+      <h1>My Book List</h1>
+      <hr/>
+      <div class="book-list">
+        <% books.forEach(book => { %>
+          <div class="book-item">
+            <h2><%= book.title %></h2>
+
+            <form action="/edit" method="get">
+              <input type="hidden" name="id" value="<%= book.id %>">
+              <input type="submit" value="Edit">
+            </form>
+
+            <form action="/delete" method="post">
+              <input type="hidden" name="deleteId" value="<%= book.id %>">
+              <input type="submit" value="Delete">
+            </form>
+
+            <img src="<%= book.cover %>" alt="Book Cover">
+            <p>Description: <%= book.description %></p>
+            <p>Rate: <%= book.rating %></p>
+            <hr/>
+          </div>
+        <% }); %>
+      </div>
+    </div>
+</body>
+
+</html>
+
+<%- include("partials/footer.ejs") %>

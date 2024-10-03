@@ -1,0 +1,19 @@
+<%- include("partials/header.ejs"); %>
+<body>
+    <div class="container">
+        <form action="/bookEdit" method="post">
+            <h1>Edit the book</h1>
+        
+            <input type="hidden" name="id" value="<%= book.id %>" required>
+            <input type="text" name="title" value="<%= book.title %>" required>
+            <input type="text" name="isbn" value="<%= book.isbn%>" required>
+            <input type="text" name="des" value="<%= book.description %>" required>
+            <input type="text" name="rate" value="<%= book.rating %>" required>
+
+            <input type="submit" value="Edit">
+        </form>
+        <a href="/">Back to Home</a> <!-- Liên kết trở về trang chính -->
+    </div>
+</body>
+
+<%- include("partials/footer.ejs"); -%>
