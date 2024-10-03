@@ -13,7 +13,10 @@ CREATE table book (
 -Thêm 1 quyển sách mới bằng cách:
 Fetch Book covers từ https://openlibrary.org/dev/docs/api/covers bằng ISBN
 và đưa URL của hình vào trong db, cùng những thông tin khác như Tên cuốn sách, Mô tả/Suy nghĩ của bản thân, rate của bản thân về cuốn sách,...
+
 -Chỉnh sửa.
+
 -Xóa.
+
 -Hiển thị những cuồn sách ấy trong db.
 
